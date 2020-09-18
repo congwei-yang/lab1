@@ -25,6 +25,8 @@ Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by press
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
 
+try commit and push to lab repo
+
 ##  Exercise 8 from ISLR Chapter 2
 
 The following illustrate commands for exploring this exercise using R and various packages for the `College` data.
@@ -66,6 +68,10 @@ The info will appear in the `help` tab.
 
 To see explore the data, you can use the command `View(College)`.
 
+```{r}
+View(College)
+```
+
 This will open a new tab, where you may scroll left and right to look at the rows and columns.
 In the `View` you should see that the first column is the College/University name.  These can be extracted using `rownames(College)`.  Let's print out the first 5
 
@@ -99,7 +105,7 @@ Look at the code to see how we extracted them.
 There `base` `R` version of scatter plot matrices is obtained using the `pairs` function to plot all variables versus each other.  We can use subsetting of columns of the dataframe to
 look at the first 5 columns.  
 
-```{r, fig.width=8}
+```{r, fig.width=8, fig.cap = "plots"}
 pairs(College[, 1:5])
 ```
 
@@ -108,7 +114,8 @@ Install the library `GGally` if it is not available (and any dependent libraries
 
 ```{r ggpairs, warning=FALSE, message=FALSE, fig.width=8}
 library(GGally)
-ggpairs(College, columns= c(1,3:5, 2))
+ggpairs(College, columns= c(1,3:5, 2)) + 
+  labs(caption = "pair plots")
 ```
 
 The last variable, `2` in this case, refers to  our response variable.
@@ -229,6 +236,8 @@ Discuss whether the model seems appropriate in terms of assumptions.
 
 
 ## Updating your work on GitHub
+
+Trying update to github. 
 
 In the upper right you should see a tab labeled `Git`.  Click on that to see a list of files that have been added/changed.
 
